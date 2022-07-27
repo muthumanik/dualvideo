@@ -2,10 +2,28 @@
 <html>
 <body>
 
-<video width="320" height="240" controls id="vid1">
-  <source src="videoplayback.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<h1>Picture In Picture</h1>
+
+<video id="myVideo"  width="320" height="320" controls>
+  <source src="play.mp4" type="video/mp4">
 </video>
+<div>
+<button id="btnPip" type="button" class="button">Click me</button>
+</div>
+
+<script>
+const myVideo = document.querySelector("#myVideo");
+const btnPip = document.querySelector("#btnPip");
+
+if("pictureInPictureEnabled" in document)
+{
+btnPip.addEventListener("click", ()=> {
+myVideo.requestPictureInPicture().catch(err => {
+console.log(err);
+});
+});
+}
+</script>
+
 </body>
 </html>
-
