@@ -15,18 +15,6 @@
  
 </video>
 
-<script>
-const myVideo = document.querySelector("#myVideo");
-myVideo.addEventListener('play', (event) => {
-if("pictureInPictureEnabled" in document)
-{
-myVideo.requestPictureInPicture().catch(err => {
-console.log(err);
-});
-}
-
-});
-</script>
 
 </body>
 </html>
